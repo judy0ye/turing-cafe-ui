@@ -1,11 +1,14 @@
 import { getReservations } from '../apiCalls';
+import Reservations from '../components/Reservations/Reservations';
 import './App.css';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 function App() {
+  const [reservations, setReservations] = useState([])
+
   useEffect(() => {
     getReservations()
-    .then(data => console.log(data))
+    .then(data => setReservations(data))
     .catch(err => `${err.message} Something went wrong`)
   }, [])
   
@@ -15,6 +18,7 @@ function App() {
       <div className='resy-form'>
       </div>
       <div className='resy-container'>
+        <Reservations reservations={reservations}/>
       </div>
     </div>
   );
