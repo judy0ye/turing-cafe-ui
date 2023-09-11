@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './Form.css'
 
-const Form = () => {
+const Form = ({submitReservation}) => {
   const [formData, setFormData] = useState({
     name: '',
     date: '',
@@ -9,10 +9,21 @@ const Form = () => {
     number: '' 
   })
 
-  console.log({formData})
   const handleChange = e => {
     const {name, value} = e.target
     setFormData({...formData, [name]: value})
+  }
+
+  const handleClick = (e) => {
+    e.preventDefault()
+    const newReservation = {
+      id: Date.now(),
+      name: formData.name,
+      date: formData.date,
+      time: formData.time,
+      number: formData.number
+    }
+    submitReservation(newReservation)
   }
 
   return (
@@ -53,9 +64,9 @@ const Form = () => {
         value={formData.number}
         onChange={handleChange}
       />          
-      <button>Make a Reservation</button>
-    
+      <button onClick={handleClick}>Make a Reservation</button>
     </form>
   )
 }
+
 export default Form

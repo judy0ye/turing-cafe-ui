@@ -13,11 +13,15 @@ function App() {
     .catch(err => `${err.message} Something went wrong`)
   }, [])
   
+  const submitReservation = (inputReservation) => {
+    setReservations([...reservations, inputReservation])
+  }
+
   return (
     <div className="App">
       <h1 className='app-title'>Turing Cafe Reservations</h1>
       <div className='resy-form'>
-        <Form />
+        <Form submitReservation={submitReservation}/>
       </div>
       <div className='resy-container'>
         <Reservations reservations={reservations}/>
