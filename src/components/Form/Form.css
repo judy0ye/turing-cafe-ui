@@ -1,0 +1,10 @@
+form input {
+  margin: 1.5rem;
+  padding: .2em .5em
+}
+
+.submit-button {
+  background-color: #008080;
+  color: aliceblue;
+  padding: .2em 2em
+}

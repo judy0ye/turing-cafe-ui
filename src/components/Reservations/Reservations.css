@@ -1,0 +1,14 @@
+.reservation {
+  border: 3px solid #008080;
+  border-radius: 10px;
+  color: #008080;
+  background: white;
+  margin: 1rem;
+  padding: .5em 1em
+}
+
+.cancel-button {
+  background-color: #008080;
+  color: aliceblue;
+  padding: .1em 3em
+}

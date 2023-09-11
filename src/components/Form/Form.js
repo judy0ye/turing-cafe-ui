@@ -64,7 +64,7 @@ const Form = ({submitReservation}) => {
         value={formData.number}
         onChange={handleChange}
       />          
-      <button onClick={handleClick}>Make a Reservation</button>
+      <button className='submit-button' onClick={handleClick}>Make a Reservation</button>
     </form>
   )
 }
