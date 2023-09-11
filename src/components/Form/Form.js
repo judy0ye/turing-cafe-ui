@@ -24,6 +24,7 @@ const Form = ({submitReservation}) => {
       number: formData.number
     }
     submitReservation(newReservation)
+    setFormData({name: '', date: '', time: '', number: ''})
   }
 
   return (
