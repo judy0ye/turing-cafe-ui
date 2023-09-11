@@ -1,4 +1,4 @@
-import { getReservations } from '../apiCalls';
+import { getReservations, postReservation } from '../apiCalls';
 import Form from '../components/Form/Form';
 import Reservations from '../components/Reservations/Reservations';
 import './App.css';
@@ -10,11 +10,13 @@ function App() {
   useEffect(() => {
     getReservations()
     .then(data => setReservations(data))
-    .catch(err => `${err.message} Something went wrong`)
+    .catch(err => `Something went wrong: ${err.message}`)
   }, [])
   
   const submitReservation = (inputReservation) => {
-    setReservations([...reservations, inputReservation])
+    postReservation(inputReservation)
+    .then(data => setReservations([...reservations, data]))
+    .catch(err => `Something went wrong: ${err.message}`)
   }
 
   return (
