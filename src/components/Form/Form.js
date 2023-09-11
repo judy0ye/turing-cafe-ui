@@ -50,7 +50,7 @@ const Form = ({submitReservation}) => {
       <input 
         id='time'
         type='text'
-        placeholder='Enter your Name here'
+        placeholder='Time'
         name='time'
         value={formData.time}
         onChange={handleChange}
