@@ -40,7 +40,7 @@ const Form = ({submitReservation}) => {
       <label htmlFor='date' />
       <input 
         id='date'
-        type='date'
+        type='text'
         placeholder='Date (mm/dd)'
         name='date'
         value={formData.date}
@@ -49,7 +49,7 @@ const Form = ({submitReservation}) => {
       <label htmlFor='time' />
       <input 
         id='time'
-        type='time'
+        type='text'
         placeholder='Enter your Name here'
         name='time'
         value={formData.time}
@@ -58,7 +58,7 @@ const Form = ({submitReservation}) => {
       <label htmlFor='number' />
       <input 
         id='number'
-        type='number'
+        type='text'
         placeholder='Number of guests'
         name='number'
         value={formData.number}
