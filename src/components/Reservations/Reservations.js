@@ -10,7 +10,6 @@ const Reservations = ({reservations}) => {
       <p>Number of Guests: {reservation.number}</p>
       <button className='cancel-button'>Cancel</button> 
     </section>
-    
   )
   })
  
